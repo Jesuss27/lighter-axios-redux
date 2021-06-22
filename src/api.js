@@ -37,6 +37,6 @@ console.log(lastYear);
 
 
 //popular games
-const popular_games= `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const popular_games= `games?key=03c4f9caf21844ca9365563067028e1a&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
 
 export const popularGamesURL = () => `${base_url}${popular_games}`
