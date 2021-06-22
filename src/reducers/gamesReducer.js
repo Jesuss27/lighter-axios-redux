@@ -5,10 +5,12 @@ const initState = {
     searched:[],
 }
 
+
 export const gamesReducer = (state=initState, action) =>{
     switch(action.type){
         case "FETCH_GAMES":
-            return {...state}
+            //return updated state 
+            return {...state, popular: action.payload.popular}
         default:
             return {...state}
     }
