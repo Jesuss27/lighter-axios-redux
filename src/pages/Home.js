@@ -5,6 +5,7 @@ import React, { useEffect } from "react"
 import Game from "../components/Game";
 import styled from "styled-components"
 import { motion } from "framer-motion";
+import GameDetail from "../components/GameDetail"
 
 const Home = () => {
     // FETCH Games
@@ -18,6 +19,7 @@ const Home = () => {
   
   return(
       <GameList>
+          <GameDetail />
           <h2>Upcoming Games</h2>
           <Games>
               {upcoming.map(game => (
