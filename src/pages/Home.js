@@ -5,9 +5,14 @@ import React, { useEffect } from "react"
 import Game from "../components/Game";
 import styled from "styled-components"
 import { motion } from "framer-motion";
-import GameDetail from "../components/GameDetail"
+import GameDetail from "../components/GameDetail";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+    //get current location
+    const location = useLocation();
+    const pathID = location.pathname.split("/")[2];
+
     // FETCH Games
     const dispatch = useDispatch();
      //On component mount, dispatch function "loadGames"
@@ -19,7 +24,7 @@ const Home = () => {
   
   return(
       <GameList>
-          <GameDetail />
+          {pathID && <GameDetail />}
           <h2>Upcoming Games</h2>
           <Games>
               {upcoming.map(game => (
